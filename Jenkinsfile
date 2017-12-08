@@ -5,7 +5,7 @@ properties([
     projectUrlStr: 'https://github.com/nagaram22/New_Repo.git/'],
     pipelineTriggers([githubPush()])])
 
-pipeline {
+node {
     agent any 
 
     stages {
