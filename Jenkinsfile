@@ -1,16 +1,33 @@
-node
-{
-stage 'integrate'
-echo 'integrated'
-stage 'test'
-echo 'tested'
-stage 'deploy'
-echo 'deployed'
-  
+#!/usr/bin/env groovy
+properties([
+    [$class: 'GithubProjectProperty',
+    displayName: '',
+    projectUrlStr: 'https://github.com/nagaram22/New_Repo.git/'],
+    pipelineTriggers([githubPush()])])
+
+pipeline {
+    agent any 
+
+    stages {
+        stage('Build') { 
+            steps { 
+                sh 'pwd' 
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'java -version'
+                
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'ls'
+                sh 'pwd'
+            }
+        }
+    }
 }
-//dfghjkcvbnmPlease wait while Jenkins is getting ready to ''
-
-
 
 
 
