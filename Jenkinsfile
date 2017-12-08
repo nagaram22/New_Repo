@@ -7,7 +7,5 @@ echo 'tested'
 stage 'deploy'
 echo 'deployed'
 }
-
-
 //dfghjkcvbnm
 
